@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+                <strong>{{ tarea.nombre }}</strong>: {{ tarea.descripcion }} ({{ tarea.estado }} - {{ tarea.prioridad }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

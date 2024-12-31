@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import Tarea
 
-# Create your views here.
-from tareas.models import Tarea
-
-Tarea.objects.create(nombre="Tarea 1", descripcion="Descripción de la tarea 1", estado="no_empezado", prioridad="alta")
+def listar_tareas(request):
+    tareas = Tarea.objects.all()
+    return render(request, 'vistatareas.html', {'tareas': tareas})
