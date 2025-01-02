@@ -1,0 +1,27 @@
+<h1>Lista de Tareas</h1>
+<a href="{% url 'crear_tarea' %}">Crear Nueva Tarea</a>
+<ul>
+    {% for tarea in page_obj %}
+        <li>
+            <strong>{{ tarea.nombre }}</strong>: {{ tarea.descripcion }}
+            ({{ tarea.estado }} - {{ tarea.prioridad }})
+            <a href="{% url 'editar_tarea' tarea.id %}">Editar</a>
+            <a href="{% url 'eliminar_tarea' tarea.id %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Controles de paginación -->
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page=1">Primera</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+    {% endif %}
+
+    <span>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Última</a>
+    {% endif %}
+</div>

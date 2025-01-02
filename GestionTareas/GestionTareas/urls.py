@@ -20,5 +20,8 @@ from tareas import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.listar_tareas, name='listar_tareas'),
+    path('', views.listar_tareas, name='listar_tareas'),  # Leer todas las tareas
+    path('crear/', views.crear_tarea, name='crear_tarea'),  # Crear una nueva tarea
+    path('editar/<int:id>/', views.editar_tarea, name='editar_tarea'),  # Editar una tarea existente
+    path('eliminar/<int:id>/', views.eliminar_tarea, name='eliminar_tarea'),  # Eliminar una tarea
 ]

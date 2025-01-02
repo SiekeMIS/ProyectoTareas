@@ -1,0 +1,20 @@
+<h1>Crear Tarea</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Nombre:</label><input type="text" name="nombre" required><br>
+    <label>Descripción:</label><textarea name="descripcion" required></textarea><br>
+    <label>Estado:</label>
+    <select name="estado">
+        <option value="no_empezado">No empezado</option>
+        <option value="en_curso">En curso</option>
+        <option value="listo">Listo</option>
+    </select><br>
+    <label>Prioridad:</label>
+    <select name="prioridad">
+        <option value="baja">Baja</option>
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+    </select><br>
+    <button type="submit">Crear</button>
+</form>
+<a href="{% url 'listar_tareas' %}">Volver</a>
