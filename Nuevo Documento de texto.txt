@@ -1,0 +1,63 @@
+Entrar a sql desde la termninal:
+mysql -u SiekeMIS -p
+Enter password:MargaretThatcherIs130%MoreHot
+
+"MNESAJE DE VIENVENIDA":
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 43
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+Entrar a la base de datos:
+USE gestion_tareas;
+"MENSAJE DE QUE FUE EXITOSO":
+"Database changed"
+
+Ver las tablas:
+SHOW TABLES;
+"MENSAJE EXITOSO"
++----------------------------+
+| Tables_in_gestion_tareas   |
++----------------------------+
+| auth_group                 |
+| auth_group_permissions     |
+| auth_permission            |
+| auth_user                  |
+| auth_user_groups           |
+| auth_user_user_permissions |
+| django_admin_log           |
+| django_content_type        |
+| django_migrations          |
+| django_session             |
+| tareas_tarea               |
++----------------------------+
+
+Ver una tabla especifica (en este caso la de 'tareas_tarea')
+DESCRIBE tareas_tarea;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | bigint       | NO   | PRI | NULL    | auto_increment |
+| nombre      | varchar(100) | NO   |     | NULL    |                |
+| descripcion | longtext     | NO   |     | NULL    |                |
+| estado      | varchar(20)  | NO   |     | NULL    |                |
+| prioridad   | varchar(10)  | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+
+Inspeccionar los datos:
+SELECT * FROM tareas_tarea;
+"MENSAJE ESXITOSO"
++----+--------------+---------------------------------------------------------+----------+-----------+
+| id | nombre       | descripcion                                             | estado   | prioridad |
++----+--------------+---------------------------------------------------------+----------+-----------+
+|  1 | Conocimiento | Leer critica de la razon pura, un capitulo por lo menos | en_curso | alta      |
+|  2 | Profesion    | Lo que me dará de comer                                 | en_curso | alta      |
+|  3 | Jobis        | Lo que me da descanso                                   | en_curso | baja      |
++----+--------------+---------------------------------------------------------+----------+-----------+
