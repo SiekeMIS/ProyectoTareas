@@ -2,7 +2,7 @@ Entrar a sql desde la termninal:
 mysql -u SiekeMIS -p
 Enter password:MargaretThatcherIs130%MoreHot
 
-"MNESAJE DE VIENVENIDA":
+"MNESAJE DE BIENVENIDA":
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 43
 Server version: 8.0.39 MySQL Community Server - GPL
